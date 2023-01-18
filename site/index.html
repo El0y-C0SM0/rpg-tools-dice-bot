@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <title>RPG Tools - dice bot</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li id="apresentacao-nav" class="selecionado">Apresentação</li>
+                <li id="comandos-nav">Comandos</li>
+                <li><a href="https://github.com/El0y-C0SM0/rpg-tools-dice-bot">Github</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <img src="imgs/bot_dados_img.jpg" id="img-bot">
+            <a href="https://discord.com/oauth2/authorize?client_id=1063954442006831234&permissions=2048&scope=bot%20applications.commands"><div id="botao"><h2>Adicionar no Discord</h2></div></a>
+        </section>
+        <section>
+            <article id="apresentacao" class="visivel">
+                <h1>Apresentação</h1>
+                <p>
+                    RPG Tools - Dice Bot é um bot de rolagem de dados para auxiliar jogadores de rpg. Ele possui a função de rolagem de dados padrão, com 10 tipos diferentes de dados, o bot também realiza rolagem secretas que somente quem solicitou a rolagem vai receber o resultado e tem uma função calculador que realiza caluculos básicos entre dois números para ajudar aqueles jogadores que tem uma certa dificuldade com matemática.
+                </p>
+            </article>
+            <article id="comandos">
+                <h1>Comandos</h1>
+                <h2>Solicitar dados</h2>
+                <p>
+                    Para solicitar dados, digite <span>/roll</span> e escreva o dado que deseja, colocando um número antes do d para pedir mais de um dado do mesmo tipo, colocando o valor do mod logo do dado indicando a operação e dando um espaço entre cada dado. Exemplo de solicitaçoes. O dado padrão do <span>/roll</span> é um d20. Para rolar um dado sem que os outro menbros vejam o valor use o comando <span>/roll-mester</span> com as mesmas regras. Os seguintes dados são suportados: <strong>d2, d3, d4, d6, d8, d10, d12, d20, d100, d1000.</strong>
+                </p>
+                <p class="comandos-line"><span>/roll 2d6 d20+4</span></p>
+                <p class="comandos-line"><span>/roll-mester 2d12 d8-1</span></p>
+                <h2>Calcular</h2>
+                <p>É possivel calcular operações básicas como soma, subtração, divisão, potência e porcentagem. Use o camando <span>/calc</span> e digite o primeiro numero, o operador, o segundo numero e envie a mensagem</p>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>Desenvolvido por <a href="https://github.com/El0y-C0SM0" id="github-eloy">El0y-c0sm0</a></p>
+        <p>Arte por <a href="https://instagram.com/glassstaff?igshid=YmMyMTA2M2Y=">Glass Staff</a></p>
+    </footer>
+    <div id="background">
+        <div class="fundo-verde" id="fundo-verde-retangulo"></div>
+        <div class="fundo-cinza" id="fundo-cinza-retangulo"></div>
+        <div class="fundo-cinza" id="fundo-cinza-circular1"></div>
+        <div class="fundo-verde" id="fundo-verde-circular1"></div>
+        <div class="fundo-cinza" id="fundo-cinza-circular2"></div>
+        <div class="fundo-verde" id="fundo-verde-circular2"></div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="menu.js"></script>
+</body>
+</html>

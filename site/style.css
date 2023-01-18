@@ -1,0 +1,278 @@
+html {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden; 
+    font-family: 'Quicksand', sans-serif;
+}
+
+@font-face {
+    font-family: Casper;
+    src: url(fonts/Casper-Bold.ttf);
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+header {
+    z-index: 3;
+    font-family: Casper, Arial, Helvetica, sans-serif;
+    font-size: larger;
+}
+
+#background {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+}
+
+h1, h2, h3 {
+    font-family: Casper, Arial, Helvetica, sans-serif;
+}
+
+.fundo-verde {
+    background-image: url(imgs/background-verde.png);
+    z-index: -1;
+    position: relative;
+}
+
+.fundo-cinza {
+    background-image: url(imgs/background-cinza.png);
+    z-index: -1;
+    position: relative;
+}
+
+#fundo-verde-retangulo {
+    height: 100%;
+    width: 50vw;
+    left: 0;
+    margin: 0;
+    top: 0;
+    position: absolute;
+}
+
+#fundo-cinza-retangulo {
+    height: 100vh;
+    width: 50vw;
+    right: 0;
+    margin: 0;
+    top: 0;
+    position: absolute;
+}
+
+#fundo-verde-circular1 {
+    top: 0;
+    left: 50vw;
+    height: 60vh;
+    width: 40vh;
+    position: relative;
+    clip-path: circle(50.7% at 0 0);
+}
+
+#fundo-cinza-circular1 {
+    top: 24.2vh;
+    right: 49vw;
+    height: 40vh;
+    width: 35vh;
+    position: absolute;
+    clip-path: ellipse(51% 43% at 100% 47%);
+
+}
+#fundo-verde-circular2 {
+    top: 54vh;
+    left: 49vw;
+    height: 40vh;
+    width: 30vh;
+    position: absolute;
+    clip-path: ellipse(47% 31% at 0% 46%);
+}
+
+#fundo-cinza-circular2 {
+    bottom: 0vh;
+    right: 49vw;
+    height: 24vh;
+    width: 50vh;
+    position: absolute;
+    clip-path: ellipse(47% 64% at 100% 100%);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    width: 40vw;
+}
+
+nav li {
+    box-sizing: border-box;
+    margin-top: 0;
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    cursor: pointer;
+    transition: all 200ms ease;
+    padding-bottom: 0.4rem;
+    background-image: linear-gradient(to top, #4e6e57 0%, #4e6e57 100%);
+}
+
+nav li::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #b8fca4;
+    transform: translatex(100%);
+    transition: inherit;
+}
+
+nav li.selecionado~li::before{
+    transform: translatex(-100%);
+}
+
+nav li.selecionado::before{
+    transform: translatex(0);
+}
+
+nav li:hover {
+    background-image: linear-gradient(to top, rgba(185, 252, 164, 0.479) 0%, #4e6e57 100%);
+}
+
+main {
+    display: grid;
+    z-index: 10;
+    height: 90vh;
+    grid-template-columns: 40% 40%;
+    gap: 23%;
+    margin: 0; 
+    padding: 0vh;
+    position: relative;
+}
+
+
+#img-bot {
+    height: 50vh;
+    margin: 2vh 7vh 7vh 7vh;
+}
+
+#botao {
+    background-color: #CCFFBD;
+    display: inline-block;
+    border-radius: 10vh;
+    margin-left: 4rem;
+    cursor: pointer;
+    height: 7vh;
+    width: 40vh;
+    text-align: center;
+    padding: 1em;
+}
+
+#botao:hover {
+    background-color: #b8fca4;
+}
+
+#botao:active {
+    background-color: #b8fca4;
+    height: 6.5vh;
+    width: 38vh;
+    margin-left: 4.5rem;
+    margin-top: 0.1rem;
+}
+
+#botao h2 {
+    margin-top: 0.5rem;
+}
+
+h1 {
+    font-size: x-large;
+}
+
+section article {
+    margin: 2vh 8vh 2vh 9vh;
+    text-align: justify;
+}
+
+main section:last-child{
+    width: 35vw;
+    position: relative;
+    overflow: hidden;
+}
+
+main section:last-child article p {
+    text-overflow: ellipsis;
+    margin: 0.5rem 0rem;
+}
+
+main section:last-child article{
+    position: absolute;
+    transition: all 1s ease;
+}
+
+#apresentacao {
+    transform: translatex(-100vh);
+}
+
+#comandos {
+    transform: translatex(100vh);
+}
+
+#apresentacao.visivel, #comandos.visivel {
+    transform: translatex(0);
+}
+
+main section:first-child {
+    margin-left: 2rem;
+}
+
+main section:last-child h1 {
+    margin: 1rem 0;
+}
+
+main section:last-child h2 {
+    font-size: larger;
+    margin: .2rem 0;
+}
+
+.comandos-line{
+    margin: 0;
+}
+
+span {
+    font-family: 'Inconsolata', monospace;
+    margin: 0;
+    padding: 0.2rem;
+    background-color: #ccffbd7c;
+    border-radius: 0.2rem;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+footer {
+    width: 100vw;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    align-items: center;
+    justify-content: space-evenly;
+    z-index: 10;
+    font-size: large;
+}
+
+footer a {
+    font-family: 'Inconsolata', monospace;
+}
+
+footer a:hover {
+    color: #b8fca4;
+}
