@@ -269,13 +269,20 @@ a:link, a:visited {
 
 footer {
     width: 100vw;
-    display: flex;
     position: fixed;
+    display: block;
     bottom: 0;
-    align-items: center;
-    justify-content: space-evenly;
     z-index: 10;
     font-size: large;
+}
+
+footer ul {
+    padding: 1rem;
+    margin: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 footer a, header a {
@@ -317,6 +324,7 @@ footer a:hover, header a:hover {
 
     header {
         background-color: #4e6e57;
+        padding: .5rem;
     }
 
     header p {
@@ -348,12 +356,19 @@ footer a:hover, header a:hover {
         top: 0;
         margin: 0;
         height: 100vh;
-        overflow: auto;
+        overflow: hidden;
     }
 
     #botao {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         margin: 5rem auto;
+        padding: auto;
+    }
+
+    #botao h2 {
+        margin: 0.3em;
     }
 
     #img-bot {
@@ -387,6 +402,11 @@ footer a:hover, header a:hover {
     footer {
         position: initial;
         background-color: #40394a;
+    }
+    
+    footer ul {
+        flex-direction: column;
+        justify-content: center;
     }
 
     #seta {
