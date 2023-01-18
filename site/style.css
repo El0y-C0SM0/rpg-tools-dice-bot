@@ -388,7 +388,7 @@ footer a:hover, header a:hover {
     main section:last-child article{
         position: relative;
         transition: none;
-        margin: 3rem 5rem;
+        margin: 3rem 2.5rem;
     }
 
     main section:last-child article .comandos-line{
@@ -413,10 +413,11 @@ footer a:hover, header a:hover {
         display: flex;
         justify-content: center;
         animation: seta-animation 1s infinite;
+        margin-right: 2rem;
     }
     
     #seta div{
-        display: inline;
+        display: block;
         position: absolute;
         height: 20px;
         width: 20px;
