@@ -3,15 +3,15 @@ import os
 from disnake.ext import commands
 from dotenv import load_dotenv
 
-load_dotenv('secret.env')
+load_dotenv('bot\secret.env')
 
-TOKEN = os.environ["TOKEN_BOT"]
+TOKEN = os.environ["TOKEN_TESTE"]
 
 bot = commands.Bot()
 
 ### Carrega as cogs da pasta commands ###
 def load_cogs(bot):
-    for file in os.listdir('commands'):
+    for file in os.listdir('bot\commands'):
         if file.endswith('.py'):
             cog = file[:-3]
             bot.load_extension(f'commands.{cog}')
