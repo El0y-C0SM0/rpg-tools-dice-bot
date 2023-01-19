@@ -169,7 +169,7 @@ main {
 
 #img-bot {
     height: 50vh;
-    margin: 2vh 7vh 7vh 7vh;
+    margin: 2vh 7vh 5vh 7vh;
 }
 
 #botao {
@@ -197,11 +197,21 @@ main {
 }
 
 #botao h2 {
-    margin-top: 0.5rem;
+    margin: 0.5rem;
 }
 
 h1 {
     font-size: x-large;
+    margin: 0.5rem 0.5rem 0.5rem 6rem;
+}
+
+section article h2 {
+    font-size: xx-large;
+}
+
+section article h3 {
+    margin: 0.2rem 0;
+    font-size: large;
 }
 
 section article {
@@ -357,6 +367,11 @@ footer a:hover, header a:hover {
         margin: 0;
         height: 100vh;
         overflow: hidden;
+    }
+
+    h1 {
+        text-align: center;
+        margin: 2rem auto;
     }
 
     #botao {
