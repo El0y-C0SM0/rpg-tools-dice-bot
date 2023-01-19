@@ -6,7 +6,7 @@ class RollMester(commands.Cog):
     def __init__(self, bot: commands.Bot):
         self.bot = bot
 
-    @commands.slash_command(name='roll-mester', description='Rola dados e envia na DM. Exemplo de solicitação: 2d20+2 d6.')
+    @commands.slash_command(name='roll-master', description='Rola dados e envia na DM. Exemplo de solicitação: 2d20+2 d6.')
     async def roll(self, inter, solicitacao: str = 'd20'):
         dado = RollDice(solicitacao)
         resultado = dado.faz_rolagens()

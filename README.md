@@ -9,7 +9,7 @@ Confira a aplicação de software [rpg tools](https://github.com/El0y-C0SM0/RPG-
 
 ## Comandos
 
-Para solicitar o dado digite `/roll` e escreva os dados que deseja indicando com *d< numero de lados >*. Para rolar varios dados do mesmo tipo digite a quantidade antes do *d* e para calcular a rolagem com mod digite o operador de soma ou subtração e o valor do mod. Para rolar mais de um dado na mesma solicitação separe cada dado com um espaço. Para solicitar a rolagem com o resultado enviado na DM digite `/roll-mester` com as mesmas regras.
+Para solicitar o dado digite `/roll` e escreva os dados que deseja indicando com *d< numero de lados >*. Para rolar varios dados do mesmo tipo digite a quantidade antes do *d* e para calcular a rolagem com mod digite o operador de soma ou subtração e o valor do mod. Para rolar mais de um dado na mesma solicitação separe cada dado com um espaço. Para solicitar a rolagem com o resultado enviado na DM digite `/roll-master` com as mesmas regras.
 
 Os seguintes dados são suportados:
 d2, d3, d4, d6, d8, d10, d12, d20, d100, d1000.
