@@ -333,8 +333,7 @@ footer a:hover, header a:hover {
     }
 
     header {
-        background-color: #4e6e57;
-        padding: .5rem;
+        display: none;
     }
 
     footer li:last-child {
