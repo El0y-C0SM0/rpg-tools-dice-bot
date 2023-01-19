@@ -24,7 +24,7 @@ header {
     font-size: larger;
 }
 
-header p {
+footer li:last-child {
     display: none;
 }
 
@@ -337,11 +337,8 @@ footer a:hover, header a:hover {
         padding: .5rem;
     }
 
-    header p {
+    footer li:last-child {
         display: initial;
-        margin: 0 1rem;
-        padding: .7rem;
-        font-size: large;
     }
 
     nav {
@@ -380,6 +377,12 @@ footer a:hover, header a:hover {
         justify-content: center;
         margin: 5rem auto;
         padding: auto;
+    }
+
+    #botao:active {
+        height: 7vh;
+        width: 40vh;
+        margin: 5rem auto;
     }
 
     #botao h2 {
