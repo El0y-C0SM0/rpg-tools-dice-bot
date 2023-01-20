@@ -2,7 +2,7 @@ from disnake.ext import commands
 from packages.rolldice import RollDice 
 
 ### Realiza o comando de rolagem de dados que envia na dm ###
-class RollMester(commands.Cog):
+class RollMaster(commands.Cog):
     def __init__(self, bot: commands.Bot):
         self.bot = bot
 
