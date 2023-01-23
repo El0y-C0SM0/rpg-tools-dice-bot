@@ -17,4 +17,4 @@ class RollMaster(commands.Cog):
         await inter.response.send_message('Rolado! Boa Sorte!')
         
 def setup(bot: commands.Bot):
-    bot.add_cog(RollMester(bot))
+    bot.add_cog(RollMaster(bot))
