@@ -28,6 +28,12 @@ footer li:last-child {
     display: none;
 }
 
+main section:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #background {
     position: fixed;
     top: 0;
@@ -176,12 +182,13 @@ main {
     background-color: #CCFFBD;
     display: inline-block;
     border-radius: 10vh;
-    margin-left: 4rem;
     cursor: pointer;
-    height: 7vh;
+    height: 5vh;
     width: 40vh;
     text-align: center;
     padding: 1em;
+    display: flex;
+    align-items: center;
 }
 
 #botao:hover {
@@ -197,12 +204,12 @@ main {
 }
 
 #botao h2 {
-    margin: 0.5rem;
+    margin: 0.5rem auto;
 }
 
 h1 {
     font-size: x-large;
-    margin: 0.5rem 0.5rem 0.5rem 6rem;
+    margin: 1rem auto;
 }
 
 section article h2 {
@@ -267,7 +274,7 @@ main section:last-child h2 {
 span {
     font-family: 'Inconsolata', monospace;
     margin: 0;
-    padding: 0.2rem;
+    padding: 0 0.2rem;
     background-color: #ccffbd7c;
     border-radius: 0.2rem;
 }
@@ -374,7 +381,7 @@ footer a:hover, header a:hover {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        margin: 5rem auto;
+        margin: 4rem auto;
         padding: auto;
     }
 

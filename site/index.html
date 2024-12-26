@@ -25,7 +25,7 @@
     <main>
         <section>
             <h1>RPG Tools - Dice Bot</h1>
-            <img src="imgs/bot_dados_img.jpg" id="img-bot">
+            <img src="imgs/dado-fundo-trasparente.png" id="img-bot">
             <a href="https://discord.com/oauth2/authorize?client_id=1063954442006831234&permissions=2048&scope=bot%20applications.commands"><div id="botao"><h2>Adicionar ao Discord</h2></div></a>
             <div id="seta"><a href="#apresentacao"><div></div></a></div>
         </section>
@@ -33,26 +33,54 @@
             <article id="apresentacao" class="visivel">
                 <h2>Apresentação</h2>
                 <p>
-                    RPG Tools - Dice Bot é um bot de rolagem de dados para auxiliar jogadores de rpg. Ele possui a função de rolagem de dados padrão, com 10 tipos diferentes de dados, o bot também realiza rolagem secretas que somente quem solicitou a rolagem vai receber o resultado e tem uma função calculador que realiza caluculos básicos entre dois números para ajudar a fazer contas mais rapidamente.
+                    RPG Tools - Dice Bot é o aliado perfeito para jogadores de RPG. Com ele, você pode realizar diversos tipos de rolagens de dados, incluindo aquelas com modificadores, seleções automáticas dos melhores ou piores resultados, e muito mais. Também é possível fazer rolagens privadas, sem que outros jogadores vejam o resultado.
                 </p>
+                <p>
+                    Simples e intuitivo, o bot é fácil de usar: basta adicioná-lo ao seu servidor para começar a aproveitar todas as funcionalidades e deixar suas sessões ainda mais dinâmicas e organizadas.
+                </p>
+                <h2>Boas rolagens!</h2>
             </article>
             <article id="comandos">
                 <h2>Comandos</h2>
                 <h3>Solicitar dados</h3>
                 <p>
-                    Para solicitar dados, digite <span>/roll</span> e escreva o dado que deseja, colocando um número antes do d para pedir mais de um dado do mesmo tipo, colocando o valor do mod logo do dado indicando a operação e dando um espaço entre cada dado. Exemplo de solicitaçoes. O dado padrão do <span>/roll</span> é um d20. Para rolar um dado sem que os outro menbros vejam o valor use o comando <span>/roll-master</span> com as mesmas regras. Os seguintes dados são suportados: <strong>d2, d3, d4, d6, d8, d10, d12, d20, d100, d1000.</strong>
+                    Para solicitar dados, digite <span>/roll</span> e escreva o dado que deseja, colocando um número antes do d para pedir mais de um dado do mesmo tipo, colocando o valor do mod logo do dado indicando a operação e dando um espaço entre cada dado. O dado padrão do <span>/roll</span> é um d20. Para rolar um dado sem que os outros membros vejam o valor use o comando <span>/hiddenroll</span> com as mesmas regras.
                 </p>
+                <p>Exemplos:</p>
                 <p class="comandos-line"><span>/roll 2d6 d20+4</span></p>
-                <p class="comandos-line"><span>/roll-master 2d12 d8-1</span></p>
-                <h3>Calcular</h3>
-                <p>É possivel calcular operações básicas como soma, subtração, divisão, potência e porcentagem. Use o camando <span>/calc</span> e digite o primeiro numero, o operador, o segundo numero e envie a mensagem</p>
+                <p class="comandos-line"><span>/hiddenroll hidden_type:Minimum 2d12 d8-1</span></p>
+                <h3>Descrição dos Comandos</h3>
+                <ul>
+                    <li><span>/help</span>: Mostra todos os comandos disponíveis.</li>
+                    <li><span>/roll</span>: Rola dados e soma o mod ao total. Ex: 2d20+2 d6.</li>
+                    <li><span>/best</span>: Rola dados e escolhe o melhor. Ex: 2d20+2 d6.</li>
+                    <li><span>/worst</span>: Rola dados e escolhe o pior. Ex: 2d20+2 d6.</li>
+                    <li><span>/allmod</span>: Rola dados e aplica o mod a todos os resultados. Ex: 2d20+2 d6.</li>
+                    <li><span>/hiddenroll</span>: Rola dados secretamente e soma o mod ao total. Ex: 2d20+2 d6.</li>
+                    <li><span>/hiddenbest</span>: Rola dados secretamente e escolhe o melhor. Ex: 2d20+2 d6.</li>
+                    <li><span>/hiddenworst</span>: Rola dados secretamente e escolhe o pior. Ex: 2d20+2 d6.</li>
+                    <li><span>/hiddenallmod</span>: Rola dados secretamente e aplica o mod a todos os resultados. Ex: 2d20+2 d6.</li>
+                </ul>
+                <h3>Tipos de Sigilo</h3>
+                <ul>
+                    <li><span>all</span>: Sigilo total.</li>
+                    <li><span>minimum</span>: Avisa que dados foram rolados.</li>
+                    <li><span>verbose</span>: Avisa quais dados foram rolados.</li>
+                </ul>
+                <h3>Operadores</h3>
+                <ul>
+                    <li><span>+</span>: Soma o valor ao resultado.</li>
+                    <li><span>-</span>: Subtrai o valor do resultado.</li>
+                    <li><span>*</span>: Multiplica o resultado pelo valor.</li>
+                    <li><span>/</span>: Divide o resultado pelo valor.</li>
+                    <li><span>**</span>: Eleva o resultado ao valor.</li>
+                </ul>
             </article>
         </section>
     </main>
     <footer>
         <ul>
             <li>Desenvolvido por <a href="https://github.com/El0y-C0SM0" id="github-eloy">El0y-c0sm0</a></li>
-            <li>Arte por <a href="https://instagram.com/glassstaff?igshid=YmMyMTA2M2Y=">Glass Staff</a></li>
             <li>Conheça o <a href="https://github.com/El0y-C0SM0/rpg-tools-dice-bot">Github</a> do bot</li>
         </ul>
     </footer>
