@@ -118,8 +118,6 @@ class RollModAll(BaseRoll):
     def __str__(self):
         results = []
 
-        print(self._results)
-
         for rol, rol_mod in zip(self._dices_rolls, self._results[1]):
             results.append(f'({rol_mod}={rol}{self.operation}{self.mod})')
 
