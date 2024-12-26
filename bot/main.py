@@ -1,18 +1,29 @@
-import disnake
 import os
+import sys
+from pathlib import Path
+
+# Adiciona o diretório raiz ao sys.path
+sys.path.append(str(Path(__file__).resolve().parent.parent))
+
+import disnake
 from disnake.ext import commands
 from dotenv import load_dotenv
 
-load_dotenv('bot\secret.env')
+load_dotenv()
 
-TOKEN = os.environ["TOKEN_TESTE"]
+DEBUG = os.environ["DEBUG"] != "False"
+TOKEN = None
 
-bot = commands.Bot()
+if DEBUG:
+    TOKEN = os.environ["TOKEN_TESTE"]
+else:
+    TOKEN = os.environ["TOKEN_BOT"]
 
-### Carrega as cogs da pasta commands ###
+bot = commands.InteractionBot()
+
 def load_cogs(bot):
-    for file in os.listdir('bot\commands'):
-        if file.endswith('.py'):
+    for file in os.listdir('commands'):
+        if file.endswith('.py') and 'mixin' not in file and file[0] != '_':
             cog = file[:-3]
             bot.load_extension(f'commands.{cog}')
 
@@ -20,8 +31,9 @@ load_cogs(bot)
 
 @bot.event
 async def on_ready():
-    print('O bot tá on')
-
     await bot.change_presence(activity = disnake.Game('RPG'))
+
+    print('O bot tá on')
+    print(f"debug: {DEBUG}")
 
 bot.run(TOKEN)

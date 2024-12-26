@@ -1,4 +1,6 @@
-secret.env
+*.env
 *.config
 *.zip
-*.txt
+venv/
+env/
+.vscode/
