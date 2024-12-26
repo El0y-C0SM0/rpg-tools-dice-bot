@@ -1,17 +1,36 @@
-# rpg-tools-dice-bot ![versão](https://img.shields.io/badge/vers%C3%A3o-1.0.0-purple?style=flat-square) ![status](https://img.shields.io/badge/status-concluido-lightblue?style=flat-square)
+# RPG Tools - Dice Bot ![Versão](https://img.shields.io/badge/vers%C3%A3o-2.0.0-purple?style=flat-square) ![Status](https://img.shields.io/badge/status-concluido-lightblue?style=flat-square)
 
 ## Descrição
 
-Um bot para auxiliar jogadores de RPG no discord. O bot possui as funções de rolar dado e enviar o resultado no chat ou na DM, e de calcular dois números. O código presente [aqui](https://github.com/El0y-C0SM0/rpg-tools-dice-bot/tree/main/bot) é uma cópia segura do código usado no bot.
-Para adiciona-lo à um server do discord [clique aqui](https://discord.com/oauth2/authorize?client_id=1063954442006831234&permissions=2048&scope=bot%20applications.commands).
+O **RPG Tools - Dice Bot** é um bot desenvolvido para facilitar as sessões de RPG no Discord. Ele permite realizar rolagens de dados com diversos modificadores, enviar resultados de forma sigilosa e simplificar a dinâmica do jogo. 
 
-Confira a aplicação de software [rpg tools](https://github.com/El0y-C0SM0/RPG-Tools), ele além das ferramentas de rolagem de dados e calculadora ele também possui um registro e armas de rpg.
+O código-fonte seguro do bot está disponível [aqui](https://github.com/El0y-C0SM0/rpg-tools-dice-bot/tree/main/bot).
+
+Adicione o bot ao seu servidor do Discord clicando [aqui](https://discord.com/oauth2/authorize?client_id=1063954442006831234&permissions=2048&scope=bot%20applications.commands).
+
+Explore também a aplicação completa do [RPG Tools](https://github.com/El0y-C0SM0/RPG-Tools), que oferece ferramentas adicionais, como registro de armas e calculadoras para RPG.
 
 ## Comandos
 
-Para solicitar o dado digite `/roll` e escreva os dados que deseja indicando com *d< numero de lados >*. Para rolar varios dados do mesmo tipo digite a quantidade antes do *d* e para calcular a rolagem com mod digite o operador de soma ou subtração e o valor do mod. Para rolar mais de um dado na mesma solicitação separe cada dado com um espaço. Para solicitar a rolagem com o resultado enviado na DM digite `/roll-master` com as mesmas regras. O dado padrão para quando não é especificado um é o d20.
+### Descrição dos Comandos
+- `/help`: Exibe todos os comandos disponíveis.
+- `/roll`: Rola dados e soma o modificador ao total. Exemplo: `2d20+2 d6`.
+- `/best`: Rola dados e escolhe o melhor resultado. Exemplo: `2d20+2 d6`.
+- `/worst`: Rola dados e escolhe o pior resultado. Exemplo: `2d20+2 d6`.
+- `/allmod`: Rola dados e aplica o modificador a todos os resultados. Exemplo: `2d20+2 d6`.
+- `/hiddenroll`: Rola dados secretamente e soma o modificador ao total. Exemplo: `2d20+2 d6`.
+- `/hiddenbest`: Rola dados secretamente e escolhe o melhor resultado. Exemplo: `2d20+2 d6`.
+- `/hiddenworst`: Rola dados secretamente e escolhe o pior resultado. Exemplo: `2d20+2 d6`.
+- `/hiddenallmod`: Rola dados secretamente e aplica o modificador a todos os resultados. Exemplo: `2d20+2 d6`.
 
-Os seguintes dados são suportados:
-d2, d3, d4, d6, d8, d10, d12, d20, d100, d1000.
+### Tipos de Sigilo
+- `all`: Sigilo total.
+- `minimum`: Notifica que dados foram rolados.
+- `verbose`: Notifica quais dados foram rolados.
 
-Para usar a calculadora use o comando `/calc` e digite o primeiro numero, o operador e o segundo numero.
+### Operadores
+- `+`: Soma o valor ao resultado.
+- `-`: Subtrai o valor do resultado.
+- `*`: Multiplica o resultado pelo valor.
+- `/`: Divide o resultado pelo valor.
+- `**`: Eleva o resultado ao valor.
