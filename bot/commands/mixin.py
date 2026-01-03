@@ -1,5 +1,6 @@
 import disnake
 from disnake.ext import commands
+from main import DEBUG
 
 from bot.core import *
 
@@ -17,6 +18,16 @@ class RollCogMixin:
             out = "**" + out.replace("\n", "\n**")
             formatted_outs.append(out)
 
+        total_line = f"**{sum(r.total for r in roll.rolls)}** ⟵ "
+        results = []
+        for r in roll.rolls:
+            results.extend(r.dices_rolls)
+        total_line += (
+            f"`[{' + '.join(map(str, results))}]` ({roll._command_line}) TOTAL"
+        )
+
+        formatted_outs.append(total_line)
+
         return "\n".join(formatted_outs)
 
     @property
@@ -28,5 +39,8 @@ class RollCogMixin:
             roll = Rolls(solicitacao, roll_type)
             out = self.format_output(roll)
             return out
-        except:
+        except Exception as e:
+            if DEBUG:
+                print("Erro ao rolar dados:", solicitacao, roll_type)
+                print(e)
             return self.error_message

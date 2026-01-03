@@ -34,3 +34,28 @@ Explore também a aplicação completa do [RPG Tools](https://github.com/El0y-C0
 - `*`: Multiplica o resultado pelo valor.
 - `/`: Divide o resultado pelo valor.
 - `**`: Eleva o resultado ao valor.
+
+## Rode localmente
+
+Esse bot é aberto para ser adaptado e executado localmente. Siga os passos abaixo para configurar o ambiente:
+
+### Configuração do Ambiente
+
+1. Clone o repositório:
+2. Crie um ambiente virtual e ative-o, a versão recomendada do Python é a **3.12**.
+3. Instale as dependências
+4. Crie um arquivo `.env` em `bot/` e preencha as variáveis.
+
+### Arquivo ENV de referência
+
+Caso deseje configurar o bot localmente, utilize o seguinte modelo para o arquivo `.env`:
+
+```
+DEBUG=False
+TOKEN_TESTE=""
+TOKEN_BOT=""
+GUILD_ID_TESTE=0
+GUILD_ID=0
+```
+
+Observe que os valores devem ser preenchidos conforme suas necessidades, portanto, é necessário ter as próprias aplicações registradas no [Portal de Desenvolvedores do Discord](https://discord.com/developers/applications). Se não quiser especificar servidores de teste, pode deixar os IDs como `0`.

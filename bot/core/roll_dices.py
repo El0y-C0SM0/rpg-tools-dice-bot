@@ -1,8 +1,8 @@
-from random import randint
 import re
+from random import randint
 
+dice_pattern = r"(^\d+)?d(\d+)((\+|\-|\/|\*|\*\*)(\d+))?"
 
-dice_pattern = r'(^\d+)?d(\d+)((\+|\-|\/|\*|\*\*)(\d+))?'
 
 def is_dice_pattern(text: str) -> bool:
     """
@@ -14,6 +14,7 @@ def is_dice_pattern(text: str) -> bool:
     :rtype: bool
     """
     return re.match(dice_pattern, text) is not None
+
 
 def parse_dice_command(text: str) -> tuple[int, int, str, int]:
     """
@@ -27,10 +28,11 @@ def parse_dice_command(text: str) -> tuple[int, int, str, int]:
     match = re.match(dice_pattern, text)
     dices = int(match.group(1)) if match.group(1) else 1
     faces = int(match.group(2))
-    operation = match.group(4) if match.group(4) else '+'
+    operation = match.group(4) if match.group(4) else "+"
     mod = int(match.group(5)) if match.group(5) else 0
-    
+
     return dices, faces, operation, mod
+
 
 def roll_dice(faces: int) -> int:
     """
@@ -42,6 +44,7 @@ def roll_dice(faces: int) -> int:
     :rtype: int
     """
     return randint(1, faces)
+
 
 def calculate_mod(dice: int, operation: str, mod: int) -> int:
     """
@@ -56,18 +59,19 @@ def calculate_mod(dice: int, operation: str, mod: int) -> int:
     :return: Resultado após aplicar a operação.
     :rtype: int
     """
-    if operation == '+':
+    if operation == "+":
         return dice + mod
-    elif operation == '-':
+    elif operation == "-":
         return dice - mod
-    elif operation == '/':
-        return dice / mod
-    elif operation == '*':
+    elif operation == "/":
+        return dice // mod
+    elif operation == "*":
         return dice * mod
-    elif operation == '**':
-        return dice ** mod
+    elif operation == "**":
+        return dice**mod
     else:
         return dice
+
 
 def roll_best_dice(faces: int, dices: int) -> list:
     """
@@ -82,6 +86,7 @@ def roll_best_dice(faces: int, dices: int) -> list:
     """
     return sorted([roll_dice(faces) for _ in range(dices)], reverse=True)
 
+
 def roll_worst_dice(faces: int, dices: int) -> list:
     """
     Rola vários dados e retorna os resultados em ordem crescente.
@@ -94,6 +99,7 @@ def roll_worst_dice(faces: int, dices: int) -> list:
     :rtype: list
     """
     return sorted([roll_dice(faces) for _ in range(dices)])
+
 
 def roll_dices(faces: int, dices: int) -> list:
     """
@@ -108,7 +114,10 @@ def roll_dices(faces: int, dices: int) -> list:
     """
     return [roll_dice(faces) for _ in range(dices)]
 
-def roll_dices_sum_with_mod(faces: int, dices: int = 1, operation: str = '+', mod: int = 0) -> tuple[int, int, list]:
+
+def roll_dices_sum_with_mod(
+    faces: int, dices: int = 1, operation: str = "+", mod: int = 0
+) -> tuple[int, int, list]:
     """
     Rola vários dados, aplica um modificador ao resultado total e retorna o resultado e as rolagens individuais.
 
@@ -127,7 +136,10 @@ def roll_dices_sum_with_mod(faces: int, dices: int = 1, operation: str = '+', mo
     sum_rolls = sum(rolls)
     return calculate_mod(sum_rolls, operation, mod), sum_rolls, rolls
 
-def roll_best_dice_with_mod(faces: int, dices: int = 1, operation: str = '+', mod: int = 0) -> tuple[int, int, list]:
+
+def roll_best_dice_with_mod(
+    faces: int, dices: int = 1, operation: str = "+", mod: int = 0
+) -> tuple[int, int, list]:
     """
     Rola vários dados, seleciona o melhor resultado, aplica um modificador e retorna o resultado e as rolagens individuais.
 
@@ -146,7 +158,10 @@ def roll_best_dice_with_mod(faces: int, dices: int = 1, operation: str = '+', mo
     best = rolls[0]
     return calculate_mod(best, operation, mod), best, rolls
 
-def roll_worst_dice_with_mod(faces: int, dices: int = 1, operation: str = '+', mod: int = 0) -> tuple[int, int, list]:
+
+def roll_worst_dice_with_mod(
+    faces: int, dices: int = 1, operation: str = "+", mod: int = 0
+) -> tuple[int, int, list]:
     """
     Rola vários dados, seleciona o pior resultado, aplica um modificador e retorna o resultado e as rolagens individuais.
 
@@ -165,6 +180,7 @@ def roll_worst_dice_with_mod(faces: int, dices: int = 1, operation: str = '+', m
     worst = rolls[0]
     return calculate_mod(worst, operation, mod), worst, rolls
 
+
 def roll_dice_with_mod(faces: int, operation: str, mod: int) -> tuple[int, int]:
     """
     Rola um dado, aplica um modificador e retorna o resultado.
@@ -181,7 +197,10 @@ def roll_dice_with_mod(faces: int, operation: str, mod: int) -> tuple[int, int]:
     dice = roll_dice(faces)
     return calculate_mod(dice, operation, mod), dice
 
-def roll_dices_all_with_mod(faces: int, dices: int = 1, operation: str = '+', mod: int = 0) -> tuple[int, list, list]:
+
+def roll_dices_all_with_mod(
+    faces: int, dices: int = 1, operation: str = "+", mod: int = 0
+) -> tuple[int, list, list]:
     """
     Rola vários dados, aplica um modificador a cada resultado e retorna o resultado total e as rolagens individuais.
 
