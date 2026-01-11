@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from .roll_dices import *
+from core.roll_dices import *
 
 
 class BaseRoll(ABC):

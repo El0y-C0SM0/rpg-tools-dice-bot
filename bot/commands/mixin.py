@@ -1,9 +1,8 @@
 import disnake
 from disnake.ext import commands
-from main import DEBUG
 
-from bot.core import *
-
+from config import DEBUG
+from core import *
 
 class RollCogMixin:
     def format_output(self, roll: Rolls):
@@ -17,6 +16,9 @@ class RollCogMixin:
             out = out.replace(" ⟵ ", "** ⟵ ")
             out = "**" + out.replace("\n", "\n**")
             formatted_outs.append(out)
+
+        if len(outs) <= 1:
+            return "\n".join(formatted_outs)
 
         total_line = f"**{sum(r.total for r in roll.rolls)}** ⟵ "
         results = []

@@ -5,26 +5,18 @@ from pathlib import Path
 # Adiciona o diretório raiz ao sys.path
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 
+import config
 import disnake
 from disnake.ext import commands
-from dotenv import load_dotenv
 
-load_dotenv()
-
-DEBUG = os.environ["DEBUG"] != "False"
-TOKEN = None
 bot = None
 
-if DEBUG:
-    TOKEN = os.environ["TOKEN_TESTE"]
-    bot = commands.InteractionBot(test_guilds=[int(os.environ["GUILD_ID_TESTE"])])
+if config.DEBUG:
+    bot = commands.InteractionBot(test_guilds=[int(config.GUILD_ID)])
+elif config.GUILD_ID is not None:
+    bot = commands.InteractionBot(test_guilds=[int(config.GUILD_ID)])
 else:
-    TOKEN = os.environ["TOKEN_BOT"]
-
-    if os.environ["GUILD_ID"] != "0":
-        bot = commands.InteractionBot(test_guilds=[int(os.environ["GUILD_ID"])])
-    else:
-        bot = commands.InteractionBot()
+    bot = commands.InteractionBot()
 
 if bot is None:
     raise ValueError("Bot não foi inicializado corretamente.")
@@ -45,7 +37,7 @@ async def on_ready():
     await bot.change_presence(activity=disnake.Game("RPG"))
 
     print("O bot tá on")
-    print(f"debug: {DEBUG}")
+    print(f"debug: {config.DEBUG}")
 
 
-bot.run(TOKEN)
+bot.run(config.TOKEN)

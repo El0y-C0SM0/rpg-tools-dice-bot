@@ -1,10 +1,10 @@
 import disnake
 from disnake.ext import commands
 
-from bot.core import *
-from bot.commands.mixin import RollCogMixin
+from core import *
+from commands.mixin import RollCogMixin
 
-class RollCog(RollCogMixin, commands.Cog): 
+class RollCog(RollCogMixin, commands.Cog):
     def __init__(self, bot: commands.Bot):
         self.bot = bot
 

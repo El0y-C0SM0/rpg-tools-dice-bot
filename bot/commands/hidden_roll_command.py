@@ -1,8 +1,8 @@
 from disnake.ext import commands
 from disnake import Option, OptionType, OptionChoice
 
-from bot.core import *
-from bot.commands.mixin import RollCogMixin
+from core import *
+from commands.mixin import RollCogMixin
 
 
 class HiddenTypes:
@@ -33,26 +33,26 @@ solicitacao_option = Option(
 
 class HiddenRollCog(RollCogMixin, commands.Cog):
     def __init__(self, bot: commands.Bot):
-        self.bot = bot  
+        self.bot = bot
 
     def _get_verbose_message(self, solicitacao):
-        if ' ' in solicitacao:      
+        if ' ' in solicitacao:
             return f"{solicitacao} foram rolados..."
         return f'{solicitacao} foi rolado...'
-    
+
     def _get_minimum_message(self, solicitacao):
         return 'Dados foram rolados...'
-    
+
     def _get_alert_roll(self, inter, hidden_type, solicitacao):
         if hidden_type == HiddenTypes.MINIMUM:
             return inter.send(self._get_minimum_message(solicitacao))
         elif hidden_type == HiddenTypes.VERBOSE:
             return inter.send(self._get_verbose_message(solicitacao))
-        
+
         return inter.send(f'O parametro `{hidden_type}` é invalido.', ephemeral=True)
 
     @commands.slash_command(
-        name='hiddenroll', 
+        name='hiddenroll',
         description='Rola dados secretamente e soma o mod ao total. Ex: 2d20+2 d6.',
         options=[hidden_type_option, solicitacao_option]
     )
@@ -65,7 +65,7 @@ class HiddenRollCog(RollCogMixin, commands.Cog):
         await inter.send(out, ephemeral=True)
 
     @commands.slash_command(
-        name='hiddenbest', 
+        name='hiddenbest',
         description='Rola dados secretamente e escolhe o melhor. Ex: 2d20+2 d6.',
         options=[hidden_type_option, solicitacao_option]
     )
@@ -78,7 +78,7 @@ class HiddenRollCog(RollCogMixin, commands.Cog):
         await inter.send(out, ephemeral=True)
 
     @commands.slash_command(
-        name='hiddenworst', 
+        name='hiddenworst',
         description='Rola dados secretamente e escolhe o pior. Ex: 2d20+2 d6.',
         options=[hidden_type_option, solicitacao_option]
     )
@@ -91,7 +91,7 @@ class HiddenRollCog(RollCogMixin, commands.Cog):
         await inter.send(out, ephemeral=True)
 
     @commands.slash_command(
-        name='hiddenallmod', 
+        name='hiddenallmod',
         description='Rola dados secretamente e aplica o mod a todos os resultados. Ex: 2d20+2 d6.',
         options=[hidden_type_option, solicitacao_option]
     )
